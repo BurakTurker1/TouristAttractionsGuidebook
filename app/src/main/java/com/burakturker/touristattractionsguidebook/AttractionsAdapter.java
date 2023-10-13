@@ -1,5 +1,6 @@
 package com.burakturker.touristattractionsguidebook;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +32,14 @@ public class AttractionsAdapter extends RecyclerView.Adapter<AttractionsAdapter.
         //viewHolder bağlandıgında neler olacak, değerler verilecek
         holder.binding.RecaylerViewTextView.setText(attractionsArrayList.get(position).name);
 
-
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(holder.itemView.getContext(),DetailsActivity.class);
+                intent.putExtra("Attraction",attractionsArrayList.get(position));
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
 
     }
 

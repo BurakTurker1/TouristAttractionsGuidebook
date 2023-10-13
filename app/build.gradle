@@ -6,6 +6,10 @@ android {
     namespace 'com.burakturker.touristattractionsguidebook'
     compileSdk 33
 
+    buildFeatures {
+        viewBinding = true;
+    }
+
     defaultConfig {
         applicationId "com.burakturker.touristattractionsguidebook"
         minSdk 28

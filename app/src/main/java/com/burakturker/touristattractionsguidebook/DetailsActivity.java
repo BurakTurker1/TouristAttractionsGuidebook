@@ -3,22 +3,34 @@ package com.burakturker.touristattractionsguidebook;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.ArrayList;
+import com.burakturker.touristattractionsguidebook.databinding.ActivityDetailsBinding;
+
 
 public class DetailsActivity extends AppCompatActivity {
     ArrayList<Attractions> attractionsArrayList;
+     ActivityDetailsBinding activityDetailsBinding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_details);
+        activityDetailsBinding = ActivityDetailsBinding.inflate(getLayoutInflater());
+
+        // getting our root layout in our view.
+        View view = activityDetailsBinding.getRoot();
+
+        // below line is to set
+        // Content view for our layout.
+        setContentView(view);
         attractionsArrayList = new ArrayList<>();
 
+
         //data
-        Attractions kapadokya = new Attractions("Kapadokya","Nevşehir/Tukiye","Kapadokya, Türkiye'nin Orta Anadolu bölgesinde yer alır ve benzersiz peri bacaları, yer altı şehirleri ve kaya kiliseleri ile ünlüdür. Sıcak hava balonlarıyla yapılan turlar, bu büyüleyici bölgenin manzarasını keşfetmek için popüler bir yol sunar.",R.drawable.Kapadokya);
-        Attractions santorini = new Attractions("Santorini"," Yunanistan","Santorini, Ege Denizi'nde yer alan volkanik bir adadır ve beyaz badanalı evleri ile ünlüdür. Muhteşem gün batımları ve sınırsız deniz manzaraları, romantik tatiller ve balayılar için popüler bir seçenektir. Ada ayrıca lezzetli Yunan mutfağı sunar.",R.drawable.Santorini);
-        Attractions sedona= new Attractions("Sedona","Arizona/ABD, Arizona"," Sedona, Kızıl Kumtaşı Kanyonları ile ünlüdür. Bu büyüleyici doğal oluşumlar, açık hava aktiviteleri ve manevi enerjileri ile ünlüdür. Sedona'da bulunan enerji merkezleri, yoga meraklıları ve ruhsal arayış içinde olanlar için cazip bir destinasyon haline getirir.",R.drawable.Sedona);
+        Attractions kapadokya = new Attractions("Kapadokya","Nevşehir/Tukiye","Kapadokya, Türkiye'nin Orta Anadolu bölgesinde yer alır ve benzersiz peri bacaları, yer altı şehirleri ve kaya kiliseleri ile ünlüdür. Sıcak hava balonlarıyla yapılan turlar, bu büyüleyici bölgenin manzarasını keşfetmek için popüler bir yol sunar.",R.drawable.kapadokya);
+        Attractions santorini = new Attractions("Santorini"," Yunanistan","Santorini, Ege Denizi'nde yer alan volkanik bir adadır ve beyaz badanalı evleri ile ünlüdür. Muhteşem gün batımları ve sınırsız deniz manzaraları, romantik tatiller ve balayılar için popüler bir seçenektir. Ada ayrıca lezzetli Yunan mutfağı sunar.",R.drawable.santorini);
+        Attractions sedona= new Attractions("Sedona","Arizona/ABD, Arizona"," Sedona, Kızıl Kumtaşı Kanyonları ile ünlüdür. Bu büyüleyici doğal oluşumlar, açık hava aktiviteleri ve manevi enerjileri ile ünlüdür. Sedona'da bulunan enerji merkezleri, yoga meraklıları ve ruhsal arayış içinde olanlar için cazip bir destinasyon haline getirir.",R.drawable.sedona);
         Attractions bali= new Attractions("bali","Endonezya","Bali, Endonezya'nın güneyinde yer alan bir tropikal cennettir. Sürf yapmak, dalış yapmak, yoga yapmak ve rahatlamak isteyenler için mükemmel bir seçenektir. Aynı zamanda Ubud'daki pirinç tarlaları ve ulu tapınakları gibi kültürel ve doğal güzelliklere ev sahipliği yapar.",R.drawable.bali);
         Attractions kyoto = new Attractions("Kyoto","Japonya"," Kyoto, geleneksel Japon kültürünün merkezidir. 1000'den fazla tapınağı, çay bahçeleri ve geleneksel el sanatlarına ev sahipliği yapar. Her yıl on binlerce turist, kimono giyen yerel halkın arasında geleneksel Japon atmosferini yaşamak için Kyoto'yu ziyaret eder.",R.drawable.kyoto);
         Attractions machu = new Attractions("Machu Picchu","Peru","Machu Picchu, Peru'nun Cusco şehrinde yer alır ve İnka İmparatorluğu'nun antik bir şehridir. Bu UNESCO Dünya Mirası alanı, mistik atmosferi ve etkileyici manzaralarıyla ünlüdür. Tarihi zenginlikleri, İnka kalıntıları ve çevresindeki doğal güzellikler, tarih ve doğa severler için cazip bir seçenek sunar.",R.drawable.machu);

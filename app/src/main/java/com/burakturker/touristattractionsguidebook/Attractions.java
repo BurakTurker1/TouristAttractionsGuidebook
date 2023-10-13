@@ -1,6 +1,8 @@
 package com.burakturker.touristattractionsguidebook;
 
-public class Attractions {
+import java.io.Serializable;
+
+public class Attractions implements Serializable {
     String name;
     String city;
     String presentation;

@@ -1,6 +1,7 @@
 package com.burakturker.touristattractionsguidebook;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -55,24 +56,12 @@ public class MainActivity extends AppCompatActivity {
         attractionsArrayList.add(rio);
         attractionsArrayList.add(roma);
 
-        //adapter
-        //ListView
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        AttractionsAdapter attractionsAdapter = new AttractionsAdapter(attractionsArrayList);
+        binding.recyclerView.setAdapter(attractionsAdapter);
 
-        //mapping
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_expandable_list_item_1,
-                attractionsArrayList.stream().map(attractions -> attractions.name).collect(Collectors.toList())
-        );
-        binding.listView.setAdapter(arrayAdapter);
-        binding.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //Toast.makeText(MainActivity.this,attractionsArrayList.get(i).name,Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(MainActivity.this,DetailsActivity.class);
-                intent.putExtra("Attraction",attractionsArrayList.get(i));
-                startActivity(intent);
 
-            }
-        });
+
 
 
     }

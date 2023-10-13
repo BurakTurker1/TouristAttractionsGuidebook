@@ -24,14 +24,5 @@ public class DetailsActivity extends AppCompatActivity {
         // Content view for our layout.
         setContentView(view);
 
-
-        Intent intent = getIntent();
-        //casting
-        Attractions SelectedData =(Attractions) intent.getSerializableExtra("Attraction");
-        binding.txtName.setText(SelectedData.name);
-        binding.textCity.setText(SelectedData.city);
-        binding.imageView.setImageResource(SelectedData.image);
-        binding.txtMessage.setText(SelectedData.presentation);
-
     }
 }
